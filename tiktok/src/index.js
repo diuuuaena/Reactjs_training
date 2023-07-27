@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import Main from '~/Main';
-import GlobalStyles from '~/components/GlobalStyles'
+import GlobalStyles from '~/components/GlobalStyles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <GlobalStyles>
-      <Main />  
-    </GlobalStyles>             
-  </React.StrictMode>
+    <React.StrictMode>
+        <GlobalStyles>
+            <Main />
+        </GlobalStyles>
+    </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
