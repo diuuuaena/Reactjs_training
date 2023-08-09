@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
@@ -20,6 +21,7 @@ import Menu from '~/components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -30,6 +32,86 @@ const MENU_ITEM = [
         children: {
             title: 'Language',
             data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'kor',
+                    title: '티엔한',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'kor',
+                    title: '티엔한',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'kor',
+                    title: '티엔한',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'kor',
+                    title: '티엔한',
+                },
                 {
                     type: 'language',
                     code: 'en',
@@ -75,7 +157,7 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faUser} />,
             title: 'View profile',
-            to: '/feedback',
+            to: '/@hoaa',
         },
         {
             icon: <FontAwesomeIcon icon={faCoins} />,
@@ -98,8 +180,8 @@ function Header() {
 
     return (
         <header className={cx('wrapper')}>
-            <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
+            <div className={cx('inner')}>               
+                <Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt="Tiktok" /></Link>
                 <Search />
                 <div className={cx('actions')}>
                     {currentUser ? (
