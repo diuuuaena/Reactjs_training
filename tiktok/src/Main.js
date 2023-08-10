@@ -1,14 +1,14 @@
-import { Fragment } from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { publicRoutes } from '~/routes'
-import { DefaultLayout } from "~/components/Layout"
+import { Fragment } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { publicRoutes } from '~/routes';
+import DefaultLayout from '~/layouts';
 
 function Main() {
     return (
         <Router>
             <div className="Main">
                 <Routes>
-                    {publicRoutes.map((route, index) =>{
+                    {publicRoutes.map((route, index) => {
                         const Page = route.component;
                         let Layout = DefaultLayout;
 
@@ -18,21 +18,21 @@ function Main() {
                             Layout = Fragment;
                         }
                         return (
-                            <Route 
-                                key={index} 
-                                path={route.path} 
+                            <Route
+                                key={index}
+                                path={route.path}
                                 element={
                                     <Layout>
                                         <Page />
                                     </Layout>
-                                } 
+                                }
                             />
                         );
                     })}
-                </Routes>           
+                </Routes>
             </div>
         </Router>
-    )
+    );
 }
 
-export default Main
+export default Main;
